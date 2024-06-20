@@ -9,9 +9,10 @@ WHERE nome LIKE 'J%';
 SELECT COUNT(*) AS Total_Livros
 FROM Livros;
 
-SELECT g.descricao AS Gênero, COUNT(l.id_livro) AS Numero_Livros
-FROM Generos g
-JOIN Livros l ON g.id_genero = l.id_genero
+SELECT g.descricao AS Genero,
+COUNT(l.id) AS Numero_Livros
+FROM generos g
+JOIN livros l ON g.id = l.id_genero
 GROUP BY g.descricao;
 
 SELECT DISTINCT m.nome
